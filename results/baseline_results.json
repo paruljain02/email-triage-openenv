@@ -1,0 +1,72 @@
+{
+  "timestamp": "2026-04-06T12:00:16.638000",
+  "model": "mock-agent",
+  "overall_average_reward": 0.772,
+  "task_results": [
+    {
+      "task_id": "task_classify",
+      "task_name": "Email Classification",
+      "difficulty": "easy",
+      "emails_processed": 10,
+      "average_reward": 0.835,
+      "cumulative_reward": 8.35,
+      "per_step_rewards": [
+        0.825,
+        1.0,
+        1.0,
+        0.37,
+        0.35,
+        0.805,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "model": "mock-agent"
+    },
+    {
+      "task_id": "task_prioritize_route",
+      "task_name": "Priority Assignment & Routing",
+      "difficulty": "medium",
+      "emails_processed": 10,
+      "average_reward": 0.858,
+      "cumulative_reward": 8.58,
+      "per_step_rewards": [
+        0.625,
+        1.0,
+        1.0,
+        0.75,
+        0.45,
+        0.755,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "model": "mock-agent"
+    },
+    {
+      "task_id": "task_full_triage",
+      "task_name": "Full Email Triage with Draft Response",
+      "difficulty": "hard",
+      "emails_processed": 12,
+      "average_reward": 0.6231,
+      "cumulative_reward": 7.4772,
+      "per_step_rewards": [
+        0.5174,
+        0.407,
+        0.7167,
+        0.545,
+        0.76,
+        0.53,
+        0.4067,
+        0.97,
+        0.7,
+        0.7545,
+        0.7182,
+        0.4517
+      ],
+      "model": "mock-agent"
+    }
+  ]
+}

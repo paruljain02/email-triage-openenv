@@ -1,0 +1,51 @@
+name: email-triage
+version: "1.0.0"
+description: >
+  A realistic email triage environment where an AI agent must classify, prioritize,
+  route, and draft responses for incoming corporate emails. Simulates the daily workflow
+  of an executive assistant or support operations manager handling a mixed inbox.
+
+author: "Parul Jain"
+license: "MIT"
+tags:
+  - openenv
+  - email
+  - triage
+  - productivity
+  - real-world
+  - nlp
+
+env_class: "email_triage_env:EmailTriageEnv"
+
+tasks:
+  - id: task_classify
+    name: "Email Classification"
+    difficulty: easy
+    description: "Classify emails by category (support, sales, internal, spam, urgent) and sentiment"
+    grader: "graders.classify_grader:ClassifyGrader"
+
+  - id: task_prioritize_route
+    name: "Priority Assignment & Routing"
+    difficulty: medium
+    description: "Classify, assign priority (P0-P3), and route to correct department"
+    grader: "graders.prioritize_route_grader:PrioritizeRouteGrader"
+
+  - id: task_full_triage
+    name: "Full Email Triage with Draft Response"
+    difficulty: hard
+    description: "Full triage: classify, prioritize, route, extract action items, and draft a reply"
+    grader: "graders.full_triage_grader:FullTriageGrader"
+
+action_space:
+  type: "structured"
+  description: "JSON object with classification, priority, routing, action items, and draft reply fields"
+
+observation_space:
+  type: "structured"
+  description: "Email object with sender, subject, body, timestamp, thread history, and metadata"
+
+reward_range: [0.0, 1.0]
+
+server:
+  port: 7860
+  host: "0.0.0.0"
