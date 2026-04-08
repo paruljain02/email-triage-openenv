@@ -7,7 +7,7 @@ name = "email-triage-openenv"
 version = "0.1.0"
 description = "A real-world email triage OpenEnv environment for training and evaluating LLM agents"
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 license = { text = "MIT" }
 authors = [
     { name = "Parul Jain", email = "paruljainsre02@gmail.com" }
@@ -19,6 +19,7 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
+    "openenv-core>=0.2.0",
     "pydantic>=2.0.0",
     "fastapi>=0.104.0",
     "uvicorn>=0.24.0",
@@ -31,6 +32,9 @@ dev = [
     "pytest>=7.0",
     "httpx>=0.24.0",
 ]
+
+[project.scripts]
+serve = "server:main"
 
 [tool.setuptools.packages.find]
 where = ["."]

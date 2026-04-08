@@ -212,7 +212,8 @@ try:
 except ImportError:
     app = None
 
-if __name__ == "__main__":
+def main():
+    """Entry point for [project.scripts] — used by openenv multi-mode deployment."""
     port = int(os.environ.get("PORT", 7860))
     try:
         import uvicorn
@@ -224,3 +225,7 @@ if __name__ == "__main__":
     except ImportError:
         print(f"  FastAPI/uvicorn not found, using stdlib server...")
         run_stdlib_server(port)
+
+
+if __name__ == "__main__":
+    main()
